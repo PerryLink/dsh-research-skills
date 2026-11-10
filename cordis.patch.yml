@@ -1,0 +1,7 @@
+# dsh-research-skills bundle patch: register the seven SOP skills.
+# The plugin carries no tools, no storage and no network access.
+- insert:
+    - id: dsh-research-skills
+      name: dsh-research-skills
+      config:
+        enabled: true
