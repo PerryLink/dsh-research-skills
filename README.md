@@ -51,11 +51,14 @@ The skills appear in the session skill catalog; the tools they reference are sep
 
 ```sh
 pnpm install
+pnpm run check:lockfile
 pnpm typecheck
 pnpm test
 pnpm build
 pnpm verify:package
 ```
+
+The lockfile is committed exactly as `pnpm install --lockfile-only` writes it (two documents: pnpm's own package-manager document, then the project document), so a local install does not rewrite it. `pnpm run check:lockfile` fails when the lockfile drifts from `package.json` or loses that form.
 
 ## License
 
