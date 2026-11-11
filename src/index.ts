@@ -54,7 +54,10 @@ export interface ParsedSkill {
   readonly path: string
 }
 
-function frontmatterOf(text: string): { fields: Record<string, string>; body: string } {
+function frontmatterOf(input: string): { fields: Record<string, string>; body: string } {
+  // A Windows checkout (or a hand-edited file) may use CRLF; the frontmatter and
+  // body are line-oriented, so normalize before parsing.
+  const text = input.replace(/\r\n?/gu, '\n')
   if (!text.startsWith('---\n')) throw new Error('skill is missing YAML frontmatter')
   const end = text.indexOf('\n---', 4)
   if (end === -1) throw new Error('skill frontmatter is not terminated')

@@ -4,10 +4,11 @@
  */
 
 import path from 'node:path'
+import { fileURLToPath } from 'node:url'
 import { describe, expect, it } from 'vitest'
 import { apply, loadSkills, parseSkill } from '../src/index.ts'
 
-const SKILLS = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..', 'skills')
+const SKILLS = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', 'skills')
 
 describe('loadSkills', () => {
   it('loads the seven SOP skills', () => {
