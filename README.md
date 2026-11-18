@@ -1,5 +1,7 @@
 # dsh-research-skills
 
+> Host compatibility: DeepSeek Harness `dsh-v0.2.2-rc.4` (verified 2026-11-18).
+
 **Seven research SOP skills for DeepSeek Harness — each one ends in a record or an explicit verdict, never prose alone.**
 
 *Literature review · citation audit · claim/evidence audit · manuscript preflight · reviewer response · reproducibility audit · data-management plan. The plugin registers the skill bodies; the tools stay in their own packages.*
