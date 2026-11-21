@@ -1,14 +1,23 @@
-# dsh-research-skills
+<div align="center">
 
-> 宿主兼容性：DeepSeek Harness `dsh-v0.2.2-rc.4`（2026-11-18 核验）。
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-research-skills-hero-zh-dark.webp">
+  <img src="docs/assets/dsh-research-skills-hero-zh-light.webp" width="100%" alt="dsh-research-skills 配图：七个 SOP skill 中的三个——literature-review 以充分性报告收尾、citation-audit 以逐条结论收尾、manuscript-preflight 以问题清单加未检查项收尾；右侧是七个技能目录、apply() 的注册事实，以及无工具、不联网的边界">
+</picture>
+
+# dsh-research-skills
 
 **七个科研 SOP skill —— 每一个都以记录或明确结论收尾，而不是只写一段话。**
 
 *文献综述 · 引文审计 · claim/证据审计 · 投稿前检查 · 审稿回复 · 复现审计 · 数据管理计划。插件只注册 skill 正文，工具仍在各自的包里。*
 
+[English](README.md) · [Español](README-es.md) · [Português](README-pt.md) · [हिन्दी](README-hi.md)
+
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
 
-[English](README.md) · 简体中文
+<sub>宿主兼容性：DeepSeek Harness `dsh-v0.2.2-rc.4`（2026-11-18 核验）。</sub>
+
+</div>
 
 ---
 
@@ -25,6 +34,13 @@
 | `data-management-plan` | 要交 DMP / 伦理 / 数据可用性声明 | 已完成章节 + 待确认问题 |
 
 每个 `SKILL.md` 都写明具体工具（`lit_search`、`cite_verify`、`claim_check`、`research_trail`、`repro_audit`、`dmp` …）、调用顺序，以及绝不能声称的东西。
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-research-skills-flow-v5-dark.svg">
+  <img src="docs/assets/dsh-research-skills-flow-v5-light.svg" width="100%" alt="dsh-research-skills 结构图：排序后的 skills/<name>/SKILL.md 被逐个读取，YAML frontmatter 与正文被解析和校验，再经 ctx.skills.register 注册，会话技能目录里就有全部七个；右侧是解析出的字段与注册接缝，底部包检查守住已发布文件清单与零运行时依赖">
+</picture>
+
+*结构：加载 → 解析 → 注册；七个 `SKILL.md` 正文就是这个插件的全部，它们引用的工具都在别的包里。图内只有真实 API 与字段名，五语共用同一张结构图。*
 
 ## 安装
 
@@ -50,6 +66,10 @@ dsh --profile <name> --dump-config | grep dsh-research-skills
 | 运行时依赖 | **零** |
 
 ## 开发
+
+![dsh-research-skills 测试套件与包检查：3 个测试的真实运行——七个 SKILL.md 全部加载、格式错误的 frontmatter 被拒绝、七个 skill 全部经 ctx.skills 注册、enabled: false 时一个也不注册——随后是包检查与锁文件检查的输出](docs/assets/dsh-research-skills-demo.gif)
+
+*动图是 2026-11-21 真实运行的 `pnpm test`、`pnpm run verify:package` 与 `pnpm run check:lockfile` 输出（1 个文件 3 个测试；插件没有 CLI，所以它自己的测试套件与包检查就是这次运行）。勾选符号因终端字体没有该字形而省略；文件名、计数与检查行均逐字保留。*
 
 ```sh
 pnpm install
