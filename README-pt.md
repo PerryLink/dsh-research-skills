@@ -61,7 +61,7 @@ Os skills aparecem no catálogo de skills da sessão; as ferramentas que eles re
 
 | | |
 |---|---|
-| DeepSeek Harness | linha peer `dsh-v0.2.2-rc.4` (verificado em 2026-11-18); `>=0.2.1-0 <0.3.0 \|\| >=0.2.2-0 <0.3.0` |
+| DeepSeek Harness | linha peer `dsh-v0.2.3-alpha.1` (verificado em 2026-11-22); `>=0.2.1-0 <0.3.0 \|\| >=0.2.2-0 <0.3.0` |
 | Node | `^22.19.0 \|\| >=24.9.0` |
 | Dependências de runtime | **zero** |
 

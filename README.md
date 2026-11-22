@@ -61,7 +61,7 @@ The skills appear in the session skill catalog; the tools they reference are sep
 
 | | |
 |---|---|
-| DeepSeek Harness | peer line `dsh-v0.2.2-rc.4`（2026-11-18）；`>=0.2.1-0 <0.3.0 \|\| >=0.2.2-0 <0.3.0` |
+| DeepSeek Harness | peer line `dsh-v0.2.3-alpha.1`（2026-11-22）；`>=0.2.1-0 <0.3.0 \|\| >=0.2.2-0 <0.3.0` |
 | Node | `^22.19.0 \|\| >=24.9.0` |
 | Runtime dependencies | **zero** |
 
